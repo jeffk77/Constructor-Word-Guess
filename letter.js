@@ -7,22 +7,23 @@ depending on whether or not the user has guessed the letter. That means the cons
   * A function that takes a character as an argument and checks it against the underlying character, updating the stored boolean value to true if it was guessed correctly
 */
 debugger
-function Letter(letter){
-    this.letter = letter;
-    this.guessed = false;
-    this.display = function(){
-      if(this.guessed === false){
-        return '_';
-      }else{
-        return this.letter;
-      }
-    }
-    this.check = function(value){
-      if(value === this.letter){
-        this.guessed = true;
-        return true;
-      }
+
+function Letter(letter) {
+  this.letter = letter;
+  this.guessed = false;
+  this.display = function () {
+    if (this.guessed === false) {
+      return '_';
+    } else {
+      return this.letter;
     }
   }
+  this.check = function (value) {
+    if (value === this.letter) {
+      this.guessed = true;
+      return true;
+    }
+  }
+}
 
 module.exports = Letter;
